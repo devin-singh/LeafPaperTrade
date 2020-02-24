@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U5z-YZ-3Xe">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="tXb-T7-x9v">
+            <objects>
+                <tabBarController id="U5z-YZ-3Xe" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4TW-dc-u3X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="b0q-Nf-xCt" kind="relationship" relationship="viewControllers" id="B2Z-1t-RUa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x1A-2U-6dY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-984" y="-346"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="dpr-mK-G5v">
+            <objects>
+                <viewController id="ePD-Mm-Ebg" customClass="SearchViewController" customModule="LeafPaperTrade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N1F-Hp-UkN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="foM-Ro-nC1">
+                                <rect key="frame" x="0.0" y="89.5" width="414" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ich-xD-6WE">
+                                <rect key="frame" x="0.0" y="133.5" width="414" height="762.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="72" id="nxe-zR-onC" customClass="SearchResultTableViewCell" customModule="LeafPaperTrade" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nxe-zR-onC" id="Rv9-PK-zJA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoG-2T-fpq">
+                                                    <rect key="frame" x="358" y="21.5" width="29" height="29"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" image="plus.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="addToWatchListButtonPressed:" destination="nxe-zR-onC" eventType="touchUpInside" id="oJs-UJ-Y3t"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zoG-2T-fpq" firstAttribute="centerY" secondItem="Rv9-PK-zJA" secondAttribute="centerY" id="KnS-4a-0kz"/>
+                                                <constraint firstItem="zoG-2T-fpq" firstAttribute="centerX" secondItem="Rv9-PK-zJA" secondAttribute="centerX" multiplier="1.8" id="S3F-IS-31Y"/>
+                                                <constraint firstItem="zoG-2T-fpq" firstAttribute="width" secondItem="Rv9-PK-zJA" secondAttribute="width" multiplier="0.07" id="cyN-q4-WBp"/>
+                                                <constraint firstItem="zoG-2T-fpq" firstAttribute="height" secondItem="Rv9-PK-zJA" secondAttribute="height" multiplier="0.4" id="pOz-PI-Hy5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addToWatchListButton" destination="zoG-2T-fpq" id="WSx-0y-txM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ich-xD-6WE" firstAttribute="top" secondItem="foM-Ro-nC1" secondAttribute="bottom" id="AZz-2f-bVv"/>
+                            <constraint firstItem="foM-Ro-nC1" firstAttribute="centerX" secondItem="BK8-Wc-OlG" secondAttribute="centerX" id="D4B-x5-PSC"/>
+                            <constraint firstAttribute="bottom" secondItem="Ich-xD-6WE" secondAttribute="bottom" id="DXb-Y6-1JT"/>
+                            <constraint firstItem="Ich-xD-6WE" firstAttribute="trailing" secondItem="BK8-Wc-OlG" secondAttribute="trailing" id="N5N-E1-OUk"/>
+                            <constraint firstItem="foM-Ro-nC1" firstAttribute="width" secondItem="N1F-Hp-UkN" secondAttribute="width" id="NWc-xd-1Pa"/>
+                            <constraint firstItem="foM-Ro-nC1" firstAttribute="centerY" secondItem="BK8-Wc-OlG" secondAttribute="centerY" multiplier="0.247" id="OtL-vK-C7m"/>
+                            <constraint firstItem="foM-Ro-nC1" firstAttribute="height" secondItem="N1F-Hp-UkN" secondAttribute="height" multiplier="0.0491071" id="bTd-48-NsN"/>
+                            <constraint firstItem="Ich-xD-6WE" firstAttribute="leading" secondItem="BK8-Wc-OlG" secondAttribute="leading" id="yZy-bS-bdW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BK8-Wc-OlG"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wBd-TB-0fo"/>
+                    <connections>
+                        <outlet property="searchResultTableView" destination="Ich-xD-6WE" id="Xd3-Oj-Qf8"/>
+                        <outlet property="searchViewSearchBar" destination="foM-Ro-nC1" id="Tbw-rj-2xQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Psq-fz-ghL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850.72463768115949" y="-70.3125"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="pls-be-z1G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b0q-Nf-xCt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="EGD-RA-dYP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bx3-Zg-EdK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ePD-Mm-Ebg" kind="relationship" relationship="rootViewController" id="qEP-bv-dR7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eOk-xO-cFM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59.420289855072468" y="-70.3125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
+    </resources>
+</document>
