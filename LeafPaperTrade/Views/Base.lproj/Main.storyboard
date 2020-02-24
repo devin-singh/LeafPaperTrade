@@ -40,13 +40,32 @@
                                 <rect key="frame" x="0.0" y="133.5" width="414" height="762.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="nxe-zR-onC">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" rowHeight="72" id="nxe-zR-onC" customClass="SearchResultTableViewCell" customModule="LeafPaperTrade" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nxe-zR-onC" id="Rv9-PK-zJA">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoG-2T-fpq">
+                                                    <rect key="frame" x="358" y="21.5" width="29" height="29"/>
+                                                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" image="plus.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="addToWatchListButtonPressed:" destination="nxe-zR-onC" eventType="touchUpInside" id="oJs-UJ-Y3t"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zoG-2T-fpq" firstAttribute="centerY" secondItem="Rv9-PK-zJA" secondAttribute="centerY" id="KnS-4a-0kz"/>
+                                                <constraint firstItem="zoG-2T-fpq" firstAttribute="centerX" secondItem="Rv9-PK-zJA" secondAttribute="centerX" multiplier="1.8" id="S3F-IS-31Y"/>
+                                                <constraint firstItem="zoG-2T-fpq" firstAttribute="width" secondItem="Rv9-PK-zJA" secondAttribute="width" multiplier="0.07" id="cyN-q4-WBp"/>
+                                                <constraint firstItem="zoG-2T-fpq" firstAttribute="height" secondItem="Rv9-PK-zJA" secondAttribute="height" multiplier="0.4" id="pOz-PI-Hy5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addToWatchListButton" destination="zoG-2T-fpq" id="WSx-0y-txM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -94,4 +113,7 @@
             <point key="canvasLocation" x="-59.420289855072468" y="-70.3125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
