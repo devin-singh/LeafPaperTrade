@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct EquityList: Codable {
+struct EquityLists: Codable {
     let equities: [Equity]
     
     enum CodingKeys: String, CodingKey {
@@ -19,9 +19,11 @@ struct EquityList: Codable {
 struct Equity: Codable {
     let symbol: String?
     let name: String?
+    let region: String?
     
     enum CodingKeys: String, CodingKey {
         case symbol = "1. symbol"
         case name = "2. name"
+        case region = "4. region"
     }
 }

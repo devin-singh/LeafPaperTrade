@@ -25,9 +25,6 @@ class EquitySearchModelController {
     static private let apiKey = "apikey"
     static private let apiValue = "W4RKS9Q6O3HNTA20"
     
-    
-    
-    
     static func getEquities(withSearchTerm searchTerm: String, completion: @escaping (Result<[Equity], NetworkError>) -> Void) {
         
         guard let baseURL = baseURL else { return }
@@ -51,12 +48,25 @@ class EquitySearchModelController {
             guard let data = data else { return completion(.failure(.noDataFound)) }
             
             do {
-                let equityList = try JSONDecoder().decode(EquityList.self, from: data)
-                completion(.success(equityList.equities))
+                let equityLists = try JSONDecoder().decode(EquityLists.self, from: data)
+                
+                let usaEquities = sortOutNonUSEquities(equities: equityLists.equities)
+                
+                completion(.success(usaEquities))
             } catch {
                 print(error, error.localizedDescription)
                 completion(.failure(.thrownError(error)))
             }
         }.resume()
+    }
+    
+    static func sortOutNonUSEquities(equities: [Equity]) -> [Equity] {
+        var usaEquities: [Equity] = []
+        for equity in equities {
+            if equity.region == "United States" {
+                usaEquities.append(equity)
+            }
+        }
+        return usaEquities
     }
 }

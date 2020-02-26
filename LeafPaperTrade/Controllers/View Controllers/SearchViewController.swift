@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SearchViewController: UIViewController {
     
     // MARK: - Properties
     
-    var equties: [Equity] = [] {
+    var equities: [Equity] = [] {
         didSet {
-            //loadViewIfNeeded()
+            //SVProgressHUD.dismiss()
             self.searchResultTableView.reloadData()
         }
     }
@@ -29,18 +30,18 @@ class SearchViewController: UIViewController {
         searchResultTableView.delegate = self
         searchResultTableView.dataSource = self
         searchViewSearchBar.delegate = self
+        SVProgressHUD.showProgress(1)
     }
     
-    
-    
     // MARK: - Private Functions
+    
     func grabEquities(withSearchTerm searchTerm: String) {
         
         EquitySearchModelController.getEquities(withSearchTerm: searchTerm) { (result) in
             switch result {
             case .success(let equities):
                 DispatchQueue.main.async {
-                    self.equties = equities
+                    self.equities = equities
                     
                 }
             case .failure(let error):
@@ -50,18 +51,20 @@ class SearchViewController: UIViewController {
     }
 }
 
-
 // MARK: - UITableViewDataSource Functions
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.equties.count
+        return self.equities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell") as? SearchResultTableViewCell else { return UITableViewCell() }
         
-        cell.textLabel?.text = equties[indexPath.row].symbol
+        let equity = equities[indexPath.row]
+        
+        cell.equityNameLabel.text = equity.name
+        cell.equitySymbolLabel.text = equity.symbol
         
         return cell
     }
@@ -69,8 +72,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return view.frame.height / 12
     }
-    
-    
 }
 
 // MARK: - SearchBarDelegate Functions
@@ -97,4 +98,10 @@ extension SearchViewController: UISearchBarDelegate {
         guard let searchTerm = searchViewSearchBar.text, !searchTerm.isEmpty else { return }
         grabEquities(withSearchTerm: searchTerm)
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+       if searchText == "" {
+           equities = []
+       }
+   }
 }

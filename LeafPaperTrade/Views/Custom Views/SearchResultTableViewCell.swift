@@ -14,7 +14,8 @@ class SearchResultTableViewCell: UITableViewCell {
     
     @IBOutlet weak var addToWatchListButton: UIButton!
     
-    
+    @IBOutlet weak var equityNameLabel: UILabel!
+    @IBOutlet weak var equitySymbolLabel: UILabel!
     
     
     // MARK: - Actions
