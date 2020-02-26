@@ -87,7 +87,7 @@
                                             <outlet property="addToWatchListButton" destination="zoG-2T-fpq" id="WSx-0y-txM"/>
                                             <outlet property="equityNameLabel" destination="aOa-rb-cZc" id="nLs-Nk-FWi"/>
                                             <outlet property="equitySymbolLabel" destination="VcZ-LA-tU2" id="FPM-4z-xhk"/>
-                                            <segue destination="59G-5D-e6M" kind="show" id="d0g-6y-Wco"/>
+                                            <segue destination="59G-5D-e6M" kind="show" identifier="toEquityDetailVC" id="d0g-6y-Wco"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

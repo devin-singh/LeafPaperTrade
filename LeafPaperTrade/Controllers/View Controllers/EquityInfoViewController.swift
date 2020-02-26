@@ -16,6 +16,13 @@ private extension CGFloat {
 class EquityInfoViewController: UIViewController{
     
     // MARK: - Properties
+    
+    var equity: Equity? {
+        didSet {
+            
+        }
+    }
+    
     private var graphData = RobinhoodChartData.portfolioData
     
     lazy private var graphView: GraphView = {

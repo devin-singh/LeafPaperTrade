@@ -15,7 +15,6 @@ class SearchViewController: UIViewController {
     
     var equities: [Equity] = [] {
         didSet {
-            //SVProgressHUD.dismiss()
             self.searchResultTableView.reloadData()
         }
     }
@@ -26,11 +25,26 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchViewSearchBar: UISearchBar!
     
     override func viewDidLoad() {
+        
+        EquityPriceController.getIntraDayPrices(forSymbol: "MSFT") { (result) in
+            switch result {
+            case .success(let intraDayPricePoints):
+                for price in intraDayPricePoints {
+                    print(price.date)
+                    print(price.price)
+                    
+                }
+            case .failure(let error):
+                print(error.errorDescription ?? error.localizedDescription)
+            }
+        }
+        
+        
         super.viewDidLoad()
+        SVProgressHUD.setContainerView(self.view)
         searchResultTableView.delegate = self
         searchResultTableView.dataSource = self
         searchViewSearchBar.delegate = self
-        SVProgressHUD.showProgress(1)
     }
     
     // MARK: - Private Functions
@@ -42,6 +56,11 @@ class SearchViewController: UIViewController {
             case .success(let equities):
                 DispatchQueue.main.async {
                     self.equities = equities
+                    SVProgressHUD.dismiss()
+                    if self.equities.count == 0 {
+                        SVProgressHUD.showInfo(withStatus: "No Results Found")
+                        SVProgressHUD.dismiss(withDelay: 0.5)
+                    }
                     
                 }
             case .failure(let error):
@@ -49,9 +68,18 @@ class SearchViewController: UIViewController {
             }
         }
     }
-}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "toEquityDetailVC" {
+            guard let destinationVC = segue.destination as? EquityInfoViewController, let indexPath = searchResultTableView.indexPathForSelectedRow else { return }
+               
+            let equityToSend = self.equities[indexPath.row]
+            destinationVC.equity = equityToSend
+           }
+       }
+    
+}// End of Class
 
-// MARK: - UITableViewDataSource Functions
+// MARK: - UITableViewDataSource Extension
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,9 +100,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return view.frame.height / 12
     }
+    
 }
 
-// MARK: - SearchBarDelegate Functions
+// MARK: - SearchBarDelegate Extension
 
 extension SearchViewController: UISearchBarDelegate {
     
@@ -94,14 +123,15 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        SVProgressHUD.show(withStatus: "Loading")
         self.searchViewSearchBar.endEditing(true)
         guard let searchTerm = searchViewSearchBar.text, !searchTerm.isEmpty else { return }
         grabEquities(withSearchTerm: searchTerm)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-       if searchText == "" {
-           equities = []
-       }
-   }
+        if searchText == "" {
+            equities = []
+        }
+    }
 }

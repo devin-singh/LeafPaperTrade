@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,8 @@
 		657A55EF2406EA7C002D937E /* GraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A55EE2406EA7C002D937E /* GraphData.swift */; };
 		657A55F32406EBFC002D937E /* EquityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A55F22406EBFC002D937E /* EquityInfoViewController.swift */; };
 		6584E538240486E60022AE3D /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6584E537240486E60022AE3D /* SearchResultTableViewCell.swift */; };
+		65997FC924071E640001DC13 /* IntradayPricePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65997FC824071E640001DC13 /* IntradayPricePoint.swift */; };
+		65997FCB240727540001DC13 /* EquityPriceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65997FCA240727540001DC13 /* EquityPriceController.swift */; };
 		65C8B94223F798E500DEABF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8B94123F798E500DEABF5 /* AppDelegate.swift */; };
 		65C8B94423F798E500DEABF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8B94323F798E500DEABF5 /* SceneDelegate.swift */; };
 		65C8B94923F798E500DEABF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C8B94723F798E500DEABF5 /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 		657A55EE2406EA7C002D937E /* GraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
 		657A55F22406EBFC002D937E /* EquityInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquityInfoViewController.swift; sourceTree = "<group>"; };
 		6584E537240486E60022AE3D /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		65997FC824071E640001DC13 /* IntradayPricePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayPricePoint.swift; sourceTree = "<group>"; };
+		65997FCA240727540001DC13 /* EquityPriceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquityPriceController.swift; sourceTree = "<group>"; };
 		65C8B93E23F798E500DEABF5 /* LeafPaperTrade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeafPaperTrade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C8B94123F798E500DEABF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65C8B94323F798E500DEABF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				6523C9D02404AFFA0007BCEA /* StyleGuide.swift */,
+				65C8B96624047A4900DEABF5 /* NetworkError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -150,7 +155,7 @@
 			children = (
 				6523C9CF2404AFEF0007BCEA /* Helpers */,
 				65C8B960240471D700DEABF5 /* EquityLists.swift */,
-				65C8B96624047A4900DEABF5 /* NetworkError.swift */,
+				65997FC824071E640001DC13 /* IntradayPricePoint.swift */,
 				657A55EE2406EA7C002D937E /* GraphData.swift */,
 			);
 			path = Models;
@@ -169,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				65C8B9642404735D00DEABF5 /* EquitySearchModelController.swift */,
+				65997FCA240727540001DC13 /* EquityPriceController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -179,7 +185,6 @@
 				A79AD416C5934AA9F1A90455 /* Pods-LeafPaperTrade.debug.xcconfig */,
 				435C05BC0E32721B6A01774C /* Pods-LeafPaperTrade.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -303,10 +308,12 @@
 				65C8B961240471D700DEABF5 /* EquityLists.swift in Sources */,
 				657A55ED2406E953002D937E /* GraphView.swift in Sources */,
 				65C8B95D2404539000DEABF5 /* SearchViewController.swift in Sources */,
+				65997FC924071E640001DC13 /* IntradayPricePoint.swift in Sources */,
 				65C8B9652404735D00DEABF5 /* EquitySearchModelController.swift in Sources */,
 				65C8B96724047A4900DEABF5 /* NetworkError.swift in Sources */,
 				65C8B94223F798E500DEABF5 /* AppDelegate.swift in Sources */,
 				65C8B94423F798E500DEABF5 /* SceneDelegate.swift in Sources */,
+				65997FCB240727540001DC13 /* EquityPriceController.swift in Sources */,
 				657A55EF2406EA7C002D937E /* GraphData.swift in Sources */,
 				6523C9D12404AFFA0007BCEA /* StyleGuide.swift in Sources */,
 				657A55F32406EBFC002D937E /* EquityInfoViewController.swift in Sources */,
