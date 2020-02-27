@@ -26,7 +26,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        EquityPriceController.getIntraDayPrices(forSymbol: "MSFT") { (result) in
+        EquityPriceController.getIntraDayPrices(forEquity: Equity(symbol: "ROKU", name: "Roku", region: "United States")) { (result) in
             switch result {
             case .success(let intraDayPricePoints):
                 for price in intraDayPricePoints {

@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct RobinhoodChartData {
+struct EquityChartData {
   let openingPrice: Double
   let data: [(date: Date, price: Double)]
   
-  static var portfolioData: RobinhoodChartData {
+  static var portfolioData: EquityChartData {
     var chartData: [(date: Date, price: Double)] = []
     
     var dateComponents = DateComponents()
@@ -51,7 +51,7 @@ struct RobinhoodChartData {
       chartData.append(chartDataPoint)
     }
 
-    let portfolioData = RobinhoodChartData(openingPrice: startPrice, data: chartData)
+    let portfolioData = EquityChartData(openingPrice: startPrice, data: chartData)
     
     return portfolioData
   }

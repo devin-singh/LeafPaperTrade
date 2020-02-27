@@ -23,7 +23,7 @@ private extension CGFloat {
 
 class GraphView: UIView {
   
-  private var dataPoints: RobinhoodChartData
+var dataPoints: EquityChartData
   
   private lazy var dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -49,13 +49,13 @@ class GraphView: UIView {
   weak var delegate: GraphViewDelegate?
   private var feedbackGenerator = UISelectionFeedbackGenerator()
   
-  init(data: RobinhoodChartData) {
+  init(data: EquityChartData) {
     self.dataPoints = data
     super.init(frame: .zero)
   }
     
   required init?(coder aDecoder: NSCoder) {
-    self.dataPoints = RobinhoodChartData(openingPrice: 0, data: [])
+    self.dataPoints = EquityChartData(openingPrice: 0, data: [])
     super.init(coder: aDecoder)
   }
 

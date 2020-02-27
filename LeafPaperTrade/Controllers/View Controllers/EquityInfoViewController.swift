@@ -19,11 +19,11 @@ class EquityInfoViewController: UIViewController{
     
     var equity: Equity? {
         didSet {
-            
+            updateGraph()
         }
     }
     
-    private var graphData = RobinhoodChartData.portfolioData
+    private var graphData = EquityChartData.portfolioData
     
     lazy private var graphView: GraphView = {
         return GraphView(data: graphData)
@@ -51,6 +51,12 @@ class EquityInfoViewController: UIViewController{
         NSLayoutConstraint(item: graphView, attribute: .height, relatedBy: .equal, toItem: TopGraphView, attribute: .height, multiplier: .graphHeightMultiplier, constant: 0.0)
         ])
     
+    }
+    
+    // MARK: - Private Functions
+    
+    private func updateGraph() {
+        
     }
 }
 
