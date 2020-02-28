@@ -18,12 +18,15 @@ class EquityPriceController {
     static private let symbolKey = "symbol"
     // Interval Query
     static private let intervalKey = "interval"
-    static private let intervalValue = "5min"
+    static private let intervalValue = "1min"
     // API Query
     static private let apiKey = "apikey"
     static private let apiValue = "W4RKS9Q6O3HNTA20"
+    // Output Size Query
+    static private let outputSizeKey = "outputsize"
+    static private let outputSizeVal = "full"
     
-    static func getIntraDayPrices(forEquity equity: Equity, completion: @escaping (Result<[IntradayPricePoint], NetworkError>) -> Void) {
+    static func getIntraDayPrices(forEquity equity: Equity, completion: @escaping (Result<[PricePoint], NetworkError>) -> Void) {
         
         guard let baseURL = baseURL else { return }
         
@@ -32,9 +35,10 @@ class EquityPriceController {
         let functionQuery = URLQueryItem(name: functionKey, value: functionValue)
         let symbolQuery = URLQueryItem(name: symbolKey, value: equity.symbol)
         let intervalQuery = URLQueryItem(name: intervalKey, value: intervalValue)
+        let outputSizeQuery = URLQueryItem(name: outputSizeKey, value: outputSizeVal)
         let apiQuery = URLQueryItem(name: apiKey, value: apiValue)
         
-        components?.queryItems = [functionQuery, symbolQuery, intervalQuery, apiQuery]
+        components?.queryItems = [functionQuery, symbolQuery, intervalQuery, outputSizeQuery, apiQuery]
         
         guard let finalURL = components?.url else { return completion(.failure(.invalidURL))}
         
@@ -50,9 +54,9 @@ class EquityPriceController {
             do {
                 guard let topLevel = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else { return }
                 
-                guard let secondLevel = topLevel["Time Series (5min)"] as? [String: [String: String]] else { return }
+                guard let secondLevel = topLevel["Time Series (1min)"] as? [String: [String: String]] else { return }
                 
-                var intraDayPricePoints: [IntradayPricePoint] = []
+                var intraDayPricePoints: [PricePoint] = []
             
                 for (k, v) in secondLevel {
                     
@@ -64,7 +68,7 @@ class EquityPriceController {
                     guard let date = dateFormatter.date(from: k) else { return }
                     guard let openPrice = v["1. open"] else { return }
                     
-                    let pricePoint = IntradayPricePoint(date: date, price: openPrice)
+                    let pricePoint = PricePoint(date: date, price: openPrice)
                     intraDayPricePoints.append(pricePoint)
                     
                     intraDayPricePoints.sort(by: >)

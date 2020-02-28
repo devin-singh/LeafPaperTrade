@@ -25,23 +25,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchViewSearchBar: UISearchBar!
     
     override func viewDidLoad() {
-        
-        EquityPriceController.getIntraDayPrices(forEquity: Equity(symbol: "ROKU", name: "Roku", region: "United States")) { (result) in
-            switch result {
-            case .success(let intraDayPricePoints):
-                for price in intraDayPricePoints {
-                    print(price.date)
-                    print(price.price)
-                    
-                }
-            case .failure(let error):
-                print(error.errorDescription ?? error.localizedDescription)
-            }
-        }
-        
-        
         super.viewDidLoad()
-        SVProgressHUD.setContainerView(self.view)
         searchResultTableView.delegate = self
         searchResultTableView.dataSource = self
         searchViewSearchBar.delegate = self
@@ -110,6 +94,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.searchViewSearchBar.layoutIfNeeded()
         self.searchViewSearchBar.setShowsCancelButton(true, animated: true)
+        SVProgressHUD.setContainerView(self.view)
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {

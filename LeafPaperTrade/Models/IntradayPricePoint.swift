@@ -8,7 +8,7 @@
 
 import Foundation
 
-class IntradayPricePoint {
+class PricePoint {
     let date: Date
     let price: String
     
@@ -18,12 +18,12 @@ class IntradayPricePoint {
     }
 }
 
-extension IntradayPricePoint: Comparable {
-    static func < (lhs: IntradayPricePoint, rhs: IntradayPricePoint) -> Bool {
+extension PricePoint: Comparable {
+    static func < (lhs: PricePoint, rhs: PricePoint) -> Bool {
         return lhs.date < rhs.date
     }
     
-    static func == (lhs: IntradayPricePoint, rhs: IntradayPricePoint) -> Bool {
+    static func == (lhs: PricePoint, rhs: PricePoint) -> Bool {
         return lhs.date == rhs.date
     }
     
