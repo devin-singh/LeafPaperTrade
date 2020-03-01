@@ -8,9 +8,9 @@
 
 import UIKit
 import SVProgressHUD
+import QuickTicker
 
 private extension CGFloat {
-  static let tickerHeightMultiplier: CGFloat = 0.4
   static let graphHeightMultiplier: CGFloat = 0.6
 }
 
@@ -29,31 +29,26 @@ class EquityInfoViewController: UIViewController {
             updateGraphViewData()
         }
     }
-    
-    //private var graphData = EquityChartData.portfolioData
-    lazy private var graphView: GraphView =  {
-        return GraphView(data: nil)
-    }()
+
     // MARK: - Outlets
     
     @IBOutlet weak var TopGraphView: GraphView!
     
+    @IBOutlet weak var tickerLabel: UILabel!
+    
+    @IBOutlet weak var stockSymbolLabel: UILabel!
     
     // MARK: - Lifecycle Functions
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        graphView.delegate = self
-        
-//        TopGraphView.addSubview(graphView)
-        
+        SVProgressHUD.setContainerView(self.view)
     }
     
     // MARK: - Private Functions
     
     private func updatePricePoints() {
+        SVProgressHUD.show(withStatus: "Loading")
         guard let equity = self.equity else { return }
         EquityPriceController.getIntraDayPrices(forEquity: equity) { (result) in
             switch result {
@@ -68,9 +63,8 @@ class EquityInfoViewController: UIViewController {
     }
     
     private func updateGraphViewData() {
+        
         guard let pricePoints = self.pricePoints else { return }
-        
-        
         
         var pricePointsToday: [PricePoint] = []
         
@@ -86,7 +80,6 @@ class EquityInfoViewController: UIViewController {
         var data: [(date: Date, price: Double)] = []
         
         if pricePointsToday.count == 0 {
-            SVProgressHUD.setContainerView(self.view)
             SVProgressHUD.showInfo(withStatus: "Not Enough Data To Display Chart")
             return
         }
@@ -102,12 +95,13 @@ class EquityInfoViewController: UIViewController {
             }
         }
         
+        if data.count == 0 { return }
         data.remove(at: 0)
         
         let dataPoints = EquityChartData(openingPrice: openingPrice, data: data.reversed())
         
-        
         let newGraphView = GraphView(data: dataPoints)
+        newGraphView.delegate = self
         TopGraphView.addSubview(newGraphView)
         
         newGraphView.backgroundColor = .black
@@ -119,11 +113,15 @@ class EquityInfoViewController: UIViewController {
         NSLayoutConstraint(item: newGraphView, attribute: .trailing, relatedBy: .equal, toItem: TopGraphView, attribute: .trailing, multiplier: 1.0, constant: 0.0),
         NSLayoutConstraint(item: newGraphView, attribute: .height, relatedBy: .equal, toItem: TopGraphView, attribute: .height, multiplier: .graphHeightMultiplier, constant: 0.0)
         ])
+        
+        tickerLabel.text = "\(dataPoints.openingPrice)"
+        stockSymbolLabel.text = equity?.symbol
+        SVProgressHUD.dismiss()
     }
 }
 
 extension EquityInfoViewController: GraphViewDelegate {
   func didMoveToPrice(_ graphView: GraphView, price: Double) {
-    //tickerControl.showNumber(price)
+    QuickTicker.animate(label: tickerLabel, toEndValue: price, duration: 0.3, options: [.easeOut])
   }
 }

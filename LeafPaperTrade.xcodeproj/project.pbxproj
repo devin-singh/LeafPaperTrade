@@ -24,6 +24,13 @@
 		65C8B961240471D700DEABF5 /* EquityLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8B960240471D700DEABF5 /* EquityLists.swift */; };
 		65C8B9652404735D00DEABF5 /* EquitySearchModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8B9642404735D00DEABF5 /* EquitySearchModelController.swift */; };
 		65C8B96724047A4900DEABF5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8B96624047A4900DEABF5 /* NetworkError.swift */; };
+		65F94F64240997DB001C3792 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F94F63240997DB001C3792 /* StringExtension.swift */; };
+		65F94F792409C8EE001C3792 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65F94F732409C8ED001C3792 /* Roboto-Regular.ttf */; };
+		65F94F7A2409C8EE001C3792 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65F94F742409C8ED001C3792 /* Roboto-Light.ttf */; };
+		65F94F7B2409C8EE001C3792 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65F94F752409C8ED001C3792 /* Roboto-Thin.ttf */; };
+		65F94F7C2409C8EE001C3792 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65F94F762409C8ED001C3792 /* Roboto-Bold.ttf */; };
+		65F94F7D2409C8EE001C3792 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65F94F772409C8ED001C3792 /* Roboto-Medium.ttf */; };
+		65F94F7E2409C8EE001C3792 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65F94F782409C8ED001C3792 /* Roboto-Black.ttf */; };
 		E6A718F89E201F19E2CBF7E0 /* Pods_LeafPaperTrade.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC2A012CBC3F975F92A8A58 /* Pods_LeafPaperTrade.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +55,13 @@
 		65C8B960240471D700DEABF5 /* EquityLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquityLists.swift; sourceTree = "<group>"; };
 		65C8B9642404735D00DEABF5 /* EquitySearchModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquitySearchModelController.swift; sourceTree = "<group>"; };
 		65C8B96624047A4900DEABF5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		65F94F63240997DB001C3792 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		65F94F732409C8ED001C3792 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		65F94F742409C8ED001C3792 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		65F94F752409C8ED001C3792 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		65F94F762409C8ED001C3792 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		65F94F772409C8ED001C3792 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		65F94F782409C8ED001C3792 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		A79AD416C5934AA9F1A90455 /* Pods-LeafPaperTrade.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeafPaperTrade.debug.xcconfig"; path = "Target Support Files/Pods-LeafPaperTrade/Pods-LeafPaperTrade.debug.xcconfig"; sourceTree = "<group>"; };
 		BBC2A012CBC3F975F92A8A58 /* Pods_LeafPaperTrade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeafPaperTrade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +91,7 @@
 			children = (
 				6523C9D02404AFFA0007BCEA /* StyleGuide.swift */,
 				65C8B96624047A4900DEABF5 /* NetworkError.swift */,
+				65F94F63240997DB001C3792 /* StringExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -123,6 +138,7 @@
 		65C8B95523F798EB00DEABF5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				65F94F722409C8DE001C3792 /* Fonts */,
 				65C8B94123F798E500DEABF5 /* AppDelegate.swift */,
 				65C8B94323F798E500DEABF5 /* SceneDelegate.swift */,
 				65C8B94A23F798E600DEABF5 /* Assets.xcassets */,
@@ -177,6 +193,19 @@
 				65997FCA240727540001DC13 /* EquityPriceController.swift */,
 			);
 			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		65F94F722409C8DE001C3792 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				65F94F782409C8ED001C3792 /* Roboto-Black.ttf */,
+				65F94F762409C8ED001C3792 /* Roboto-Bold.ttf */,
+				65F94F742409C8ED001C3792 /* Roboto-Light.ttf */,
+				65F94F772409C8ED001C3792 /* Roboto-Medium.ttf */,
+				65F94F732409C8ED001C3792 /* Roboto-Regular.ttf */,
+				65F94F752409C8ED001C3792 /* Roboto-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		E359471D0F9B256C048264F1 /* Pods */ = {
@@ -248,10 +277,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F94F7B2409C8EE001C3792 /* Roboto-Thin.ttf in Resources */,
 				65C8B94E23F798E600DEABF5 /* LaunchScreen.storyboard in Resources */,
 				65C8B95A23F79A3F00DEABF5 /* Default-568h@2x.png in Resources */,
+				65F94F7A2409C8EE001C3792 /* Roboto-Light.ttf in Resources */,
+				65F94F792409C8EE001C3792 /* Roboto-Regular.ttf in Resources */,
 				65C8B94B23F798E600DEABF5 /* Assets.xcassets in Resources */,
+				65F94F7C2409C8EE001C3792 /* Roboto-Bold.ttf in Resources */,
+				65F94F7E2409C8EE001C3792 /* Roboto-Black.ttf in Resources */,
 				65C8B94923F798E500DEABF5 /* Main.storyboard in Resources */,
+				65F94F7D2409C8EE001C3792 /* Roboto-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +344,7 @@
 				657A55ED2406E953002D937E /* GraphView.swift in Sources */,
 				65C8B95D2404539000DEABF5 /* SearchViewController.swift in Sources */,
 				65997FC924071E640001DC13 /* IntradayPricePoint.swift in Sources */,
+				65F94F64240997DB001C3792 /* StringExtension.swift in Sources */,
 				65C8B9652404735D00DEABF5 /* EquitySearchModelController.swift in Sources */,
 				65C8B96724047A4900DEABF5 /* NetworkError.swift in Sources */,
 				65C8B94223F798E500DEABF5 /* AppDelegate.swift in Sources */,

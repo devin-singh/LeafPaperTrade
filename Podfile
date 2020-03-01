@@ -6,6 +6,7 @@ target 'LeafPaperTrade' do
   use_frameworks!
   
   pod 'SVProgressHUD'
+  pod 'QuickTicker'
   
   # Pods for LeafPaperTrade
 

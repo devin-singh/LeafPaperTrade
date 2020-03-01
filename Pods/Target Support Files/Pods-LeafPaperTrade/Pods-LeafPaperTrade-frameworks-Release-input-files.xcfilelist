@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-LeafPaperTrade/Pods-LeafPaperTrade-frameworks.sh
+${BUILT_PRODUCTS_DIR}/QuickTicker/QuickTicker.framework
 ${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework

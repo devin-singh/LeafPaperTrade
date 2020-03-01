@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="tXb-T7-x9v">
@@ -126,7 +131,31 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2C-Ae-TqC">
                                 <rect key="frame" x="0.0" y="91.5" width="414" height="537.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="25" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AqE-mG-eld">
+                                        <rect key="frame" x="62" y="59" width="290" height="43"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="40" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQT-V8-xU3">
+                                        <rect key="frame" x="62" y="113" width="290" height="43"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="AqE-mG-eld" firstAttribute="centerY" secondItem="g2C-Ae-TqC" secondAttribute="centerY" multiplier="0.3" id="Hwe-Hd-dhG"/>
+                                    <constraint firstItem="RQT-V8-xU3" firstAttribute="centerX" secondItem="g2C-Ae-TqC" secondAttribute="centerX" id="OAP-CN-Z38"/>
+                                    <constraint firstItem="AqE-mG-eld" firstAttribute="centerX" secondItem="g2C-Ae-TqC" secondAttribute="centerX" id="WqR-qW-jug"/>
+                                    <constraint firstItem="AqE-mG-eld" firstAttribute="width" secondItem="g2C-Ae-TqC" secondAttribute="width" multiplier="0.700483" id="iVK-Ju-aBi"/>
+                                    <constraint firstItem="RQT-V8-xU3" firstAttribute="centerY" secondItem="g2C-Ae-TqC" secondAttribute="centerY" multiplier="0.5" id="mir-Hh-vwu"/>
+                                    <constraint firstItem="RQT-V8-xU3" firstAttribute="width" secondItem="g2C-Ae-TqC" secondAttribute="width" multiplier="0.7" id="pJi-7c-f0c"/>
+                                    <constraint firstItem="RQT-V8-xU3" firstAttribute="height" secondItem="g2C-Ae-TqC" secondAttribute="height" multiplier="0.08" id="sXn-Ax-Wt0"/>
+                                    <constraint firstItem="AqE-mG-eld" firstAttribute="height" secondItem="g2C-Ae-TqC" secondAttribute="height" multiplier="0.08" id="xN8-JU-r0z"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -141,11 +170,13 @@
                     <navigationItem key="navigationItem" id="jvg-sH-wPV"/>
                     <connections>
                         <outlet property="TopGraphView" destination="g2C-Ae-TqC" id="C4W-0c-eMF"/>
+                        <outlet property="stockSymbolLabel" destination="AqE-mG-eld" id="RDB-wd-76F"/>
+                        <outlet property="tickerLabel" destination="RQT-V8-xU3" id="pD3-r0-8Rt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdH-3E-C9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1845" y="-60"/>
+            <point key="canvasLocation" x="1844.9275362318842" y="-60.267857142857139"/>
         </scene>
         <!--Item-->
         <scene sceneID="pls-be-z1G">

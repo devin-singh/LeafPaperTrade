@@ -52,8 +52,8 @@ enum BackgroundType {
 }
 
 extension UIColor {
-  static let upAccentColor: UIColor = UIColor(red: 0.19, green: 0.8, blue: 0.6, alpha: 1.0)
-  static let downAccentColor: UIColor = UIColor(red: 0.95, green: 0.34, blue: 0.23, alpha: 1.0)
+  static let upAccentColor: UIColor = UIColor(red: 157/255, green: 0/255, blue: 255/255, alpha: 1.0)
+  static let downAccentColor: UIColor = UIColor(red: 157/255, green: 0/255, blue: 0/255, alpha: 1.0)
   
   static let lightTextTextColor: UIColor = .white
   static let darkTextTextColor: UIColor = .black

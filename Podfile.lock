@@ -1,16 +1,20 @@
 PODS:
+  - QuickTicker (0.1.5)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - QuickTicker
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
+    - QuickTicker
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  QuickTicker: e382cfb3df74c2fdb437ab4fc42de488a2ab4028
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 695d43b320d03f711c903b08df1f1fde2b80ead3
+PODFILE CHECKSUM: c7f101d1300b66d7fd0500d51ac13dbac502b2e9
 
 COCOAPODS: 1.9.0

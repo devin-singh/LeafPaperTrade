@@ -108,7 +108,7 @@ class GraphView: UIView {
             let midPoint = dataPoints.openingPrice
             let graphMiddle = height/2
             
-            let y: CGFloat = graphMiddle + CGFloat(midPoint - dataPoint.price) * .scale
+            let y: CGFloat = graphMiddle + CGFloat(midPoint - dataPoint.price) * CGFloat(1000 / dataPoints.openingPrice)
             
             let newPoint = CGPoint(x: xCoordinates[index], y: y)
             
@@ -142,7 +142,7 @@ class GraphView: UIView {
     }
     
     private func configureTimeStampLabel() {
-        timeStampLabel.configureTitleLabel(withText: "09:30 AM ET, MAY 25")
+        timeStampLabel.configureTitleLabel(withText: "09:30:00 ET")
         timeStampLabel.textColor = .lightTitleTextColor
         addSubview(timeStampLabel)
         timeStampLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -188,7 +188,11 @@ class GraphView: UIView {
     }
     
     private func updateIndicator(with offset: CGFloat, date: Date, price: Double) {
-        timeStampLabel.text = dateFormatter.string(from: date).uppercased()
+        let dateString = dateFormatter.string(from: date)
+        
+        let seperatedDate = dateString.split(separator: " ").map { String($0) }
+
+        timeStampLabel.text = seperatedDate[1] + " ET"
         
         if offset != lineViewLeading.constant {
             feedbackGenerator.prepare()
