@@ -46,6 +46,7 @@ class LogInViewController: UIViewController {
     @IBAction func logInButtonPressed(_ sender: Any) {
         LogInButton.pulsate()
         
+        SVProgressHUD.show()
         guard let emailText = emailTextField.text, !emailText.isEmpty else {
             SVProgressHUD.showInfo(withStatus: "Enter your email")
             return
@@ -65,6 +66,7 @@ class LogInViewController: UIViewController {
                 return
             }
             DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
                 self.performSegue(withIdentifier: "toTabBar", sender: sender)
             }
             

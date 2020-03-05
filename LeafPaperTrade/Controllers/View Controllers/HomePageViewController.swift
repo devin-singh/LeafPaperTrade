@@ -10,27 +10,25 @@ import UIKit
 import Firebase
 
 class HomePageViewController: UIViewController {
-
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var portfolioValueLabel: UILabel!
+    
+    // MARK: - Lifecycle Functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updatePortfolioLabel()
         self.navigationController?.navigationBar.isHidden = true
-        let ref = Database.database().reference()
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        ref.childByAutoId().setValue("User1")
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Private Functions
+    
+    private func updatePortfolioLabel() {
+        
     }
-    */
-
 }

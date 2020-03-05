@@ -29,6 +29,7 @@
 		65C8B961240471D700DEABF5 /* EquityLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8B960240471D700DEABF5 /* EquityLists.swift */; };
 		65C8B9652404735D00DEABF5 /* EquitySearchModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8B9642404735D00DEABF5 /* EquitySearchModelController.swift */; };
 		65C8B96724047A4900DEABF5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8B96624047A4900DEABF5 /* NetworkError.swift */; };
+		65DD441D241160D90045312E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DD441C241160D90045312E /* SignUpViewController.swift */; };
 		65F94F64240997DB001C3792 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F94F63240997DB001C3792 /* StringExtension.swift */; };
 		65F94F792409C8EE001C3792 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65F94F732409C8ED001C3792 /* Roboto-Regular.ttf */; };
 		65F94F7A2409C8EE001C3792 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65F94F742409C8ED001C3792 /* Roboto-Light.ttf */; };
@@ -65,6 +66,7 @@
 		65C8B960240471D700DEABF5 /* EquityLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquityLists.swift; sourceTree = "<group>"; };
 		65C8B9642404735D00DEABF5 /* EquitySearchModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquitySearchModelController.swift; sourceTree = "<group>"; };
 		65C8B96624047A4900DEABF5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		65DD441C241160D90045312E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		65F94F63240997DB001C3792 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		65F94F732409C8ED001C3792 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		65F94F742409C8ED001C3792 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				658D70112410B2CD007FAC64 /* LogInOrSignUpViewController.swift */,
 				658D70152410CAD3007FAC64 /* LogInViewController.swift */,
+				65DD441C241160D90045312E /* SignUpViewController.swift */,
 			);
 			path = "Auth Controllers";
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				657A55ED2406E953002D937E /* GraphView.swift in Sources */,
 				65C8B95D2404539000DEABF5 /* SearchViewController.swift in Sources */,
 				65997FC924071E640001DC13 /* IntradayPricePoint.swift in Sources */,
+				65DD441D241160D90045312E /* SignUpViewController.swift in Sources */,
 				65F94F64240997DB001C3792 /* StringExtension.swift in Sources */,
 				658D70142410B3B6007FAC64 /* UIButtonExtension.swift in Sources */,
 				65C8B9652404735D00DEABF5 /* EquitySearchModelController.swift in Sources */,
