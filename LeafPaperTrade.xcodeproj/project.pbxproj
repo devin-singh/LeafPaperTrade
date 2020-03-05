@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6523C9D12404AFFA0007BCEA /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523C9D02404AFFA0007BCEA /* StyleGuide.swift */; };
+		6543212E2411C4CE003BAC65 /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6543212D2411C4CE003BAC65 /* NSLayoutConstraintExtension.swift */; };
 		657A55ED2406E953002D937E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A55EC2406E953002D937E /* GraphView.swift */; };
 		657A55EF2406EA7C002D937E /* GraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A55EE2406EA7C002D937E /* GraphData.swift */; };
 		657A55F32406EBFC002D937E /* EquityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A55F22406EBFC002D937E /* EquityInfoViewController.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		435C05BC0E32721B6A01774C /* Pods-LeafPaperTrade.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeafPaperTrade.release.xcconfig"; path = "Target Support Files/Pods-LeafPaperTrade/Pods-LeafPaperTrade.release.xcconfig"; sourceTree = "<group>"; };
 		6523C9D02404AFFA0007BCEA /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
+		6543212D2411C4CE003BAC65 /* NSLayoutConstraintExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtension.swift; sourceTree = "<group>"; };
 		657A55EC2406E953002D937E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		657A55EE2406EA7C002D937E /* GraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
 		657A55F22406EBFC002D937E /* EquityInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquityInfoViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				6523C9D02404AFFA0007BCEA /* StyleGuide.swift */,
 				65C8B96624047A4900DEABF5 /* NetworkError.swift */,
 				65F94F63240997DB001C3792 /* StringExtension.swift */,
+				6543212D2411C4CE003BAC65 /* NSLayoutConstraintExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				657A55EF2406EA7C002D937E /* GraphData.swift in Sources */,
 				6523C9D12404AFFA0007BCEA /* StyleGuide.swift in Sources */,
 				657A55F32406EBFC002D937E /* EquityInfoViewController.swift in Sources */,
+				6543212E2411C4CE003BAC65 /* NSLayoutConstraintExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

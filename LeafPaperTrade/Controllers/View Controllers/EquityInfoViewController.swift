@@ -38,16 +38,52 @@ class EquityInfoViewController: UIViewController {
     
     @IBOutlet weak var stockSymbolLabel: UILabel!
     
+    @IBOutlet weak var tradeButton: UIButton!
+    
+    @IBOutlet weak var buyButton: UIButton!
+    
+    @IBOutlet weak var tradeButtonY: NSLayoutConstraint!
+    
     // MARK: - Lifecycle Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         SVProgressHUD.setContainerView(self.view)
+        tradeButton.layer.cornerRadius = 10
+        tradeButton.clipsToBounds = true
+        
+        buyButton.layer.cornerRadius = 10
+        buyButton.clipsToBounds = true
+        
+        buyButton.isHidden = true
+        tradeButton.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
+    
+    //  MARK: - Actions
+    
+    @IBAction func tradeButtonPressed(_ sender: Any) {
+        
+        
+        if tradeButton.titleLabel?.text != "Sell" {
+            UIView.animate(withDuration: 2) {
+                self.tradeButtonY.setMultiplier(multiplier: 1.6)
+                self.tradeButton.setTitle("Sell", for: .normal)
+                self.tradeButton.pulsate()
+                self.buyButton.pulsate()
+            }
+        } else {
+            tradeButton.pulsate()
+            
+            // pop sell controller
+        }
+    }
+    
+    
+    
     // MARK: - Private Functions
     
     private func updatePricePoints() {
@@ -120,6 +156,8 @@ class EquityInfoViewController: UIViewController {
         tickerLabel.text = "\(dataPoints.openingPrice)"
         stockSymbolLabel.text = equity?.symbol
         SVProgressHUD.dismiss()
+        tradeButton.isHidden = false
+        buyButton.isHidden = false
     }
 }
 

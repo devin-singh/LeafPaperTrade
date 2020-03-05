@@ -388,21 +388,51 @@
                                     <constraint firstItem="AqE-mG-eld" firstAttribute="height" secondItem="g2C-Ae-TqC" secondAttribute="height" multiplier="0.08" id="xN8-JU-r0z"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QG4-r4-JWH">
+                                <rect key="frame" x="228" y="748.5" width="165" height="35"/>
+                                <color key="backgroundColor" red="0.61568627450000002" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <state key="normal" title="Buy">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntk-ua-5Zj">
+                                <rect key="frame" x="228" y="748.5" width="165" height="35"/>
+                                <color key="backgroundColor" red="0.61568627450000002" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="17"/>
+                                <state key="normal" title="Trade">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tradeButtonPressed:" destination="59G-5D-e6M" eventType="touchUpInside" id="L1L-gV-BFH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="QG4-r4-JWH" firstAttribute="centerX" secondItem="h8w-Wz-4em" secondAttribute="centerX" multiplier="1.5" id="4GO-a2-NxS"/>
+                            <constraint firstItem="Ntk-ua-5Zj" firstAttribute="height" secondItem="7PP-jM-Ija" secondAttribute="height" multiplier="0.0390625" id="7K0-QI-jZx"/>
+                            <constraint firstItem="QG4-r4-JWH" firstAttribute="centerY" secondItem="h8w-Wz-4em" secondAttribute="centerY" multiplier="1.7" id="7Un-cx-R5x"/>
+                            <constraint firstItem="Ntk-ua-5Zj" firstAttribute="width" secondItem="7PP-jM-Ija" secondAttribute="width" multiplier="0.398551" id="8EP-G4-UUF"/>
+                            <constraint firstItem="Ntk-ua-5Zj" firstAttribute="centerY" secondItem="h8w-Wz-4em" secondAttribute="centerY" multiplier="1.7" id="FPJ-El-JAx"/>
+                            <constraint firstItem="QG4-r4-JWH" firstAttribute="height" secondItem="7PP-jM-Ija" secondAttribute="height" multiplier="0.0390625" id="FPk-nM-YJs"/>
                             <constraint firstItem="g2C-Ae-TqC" firstAttribute="width" secondItem="7PP-jM-Ija" secondAttribute="width" id="PI8-TM-yMj"/>
                             <constraint firstItem="g2C-Ae-TqC" firstAttribute="centerY" secondItem="h8w-Wz-4em" secondAttribute="centerY" multiplier="0.8" id="Qad-RM-vt7"/>
                             <constraint firstItem="g2C-Ae-TqC" firstAttribute="height" secondItem="7PP-jM-Ija" secondAttribute="height" multiplier="0.6" id="WaA-qU-ixd"/>
+                            <constraint firstItem="Ntk-ua-5Zj" firstAttribute="centerX" secondItem="h8w-Wz-4em" secondAttribute="centerX" multiplier="1.5" id="ahl-td-olP"/>
                             <constraint firstItem="g2C-Ae-TqC" firstAttribute="centerX" secondItem="h8w-Wz-4em" secondAttribute="centerX" id="ckt-Mq-QWE"/>
+                            <constraint firstItem="QG4-r4-JWH" firstAttribute="width" secondItem="7PP-jM-Ija" secondAttribute="width" multiplier="0.398551" id="dpP-Zo-roE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h8w-Wz-4em"/>
                     </view>
                     <navigationItem key="navigationItem" id="jvg-sH-wPV"/>
                     <connections>
                         <outlet property="TopGraphView" destination="g2C-Ae-TqC" id="C4W-0c-eMF"/>
+                        <outlet property="buyButton" destination="QG4-r4-JWH" id="39k-Ec-ERD"/>
                         <outlet property="stockSymbolLabel" destination="AqE-mG-eld" id="RDB-wd-76F"/>
                         <outlet property="tickerLabel" destination="RQT-V8-xU3" id="pD3-r0-8Rt"/>
+                        <outlet property="tradeButton" destination="Ntk-ua-5Zj" id="B2r-zK-vrR"/>
+                        <outlet property="tradeButtonY" destination="FPJ-El-JAx" id="dOC-LN-Vhn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdH-3E-C9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
