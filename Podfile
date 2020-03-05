@@ -9,7 +9,7 @@ target 'LeafPaperTrade' do
   pod 'QuickTicker'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-  pod 'FirebaseUI/Auth'
+  pod 'Firebase/Auth'
   
   # Pods for LeafPaperTrade
 

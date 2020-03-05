@@ -14,6 +14,7 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.isHidden = true
         let ref = Database.database().reference()
         
         ref.childByAutoId().setValue("User1")

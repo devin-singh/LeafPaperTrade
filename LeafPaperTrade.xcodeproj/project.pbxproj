@@ -12,6 +12,9 @@
 		657A55EF2406EA7C002D937E /* GraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A55EE2406EA7C002D937E /* GraphData.swift */; };
 		657A55F32406EBFC002D937E /* EquityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A55F22406EBFC002D937E /* EquityInfoViewController.swift */; };
 		6584E538240486E60022AE3D /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6584E537240486E60022AE3D /* SearchResultTableViewCell.swift */; };
+		658D70122410B2CD007FAC64 /* LogInOrSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D70112410B2CD007FAC64 /* LogInOrSignUpViewController.swift */; };
+		658D70142410B3B6007FAC64 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D70132410B3B6007FAC64 /* UIButtonExtension.swift */; };
+		658D70162410CAD3007FAC64 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658D70152410CAD3007FAC64 /* LogInViewController.swift */; };
 		6596F7DE24105D7500609C94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6596F7DD24105D7500609C94 /* GoogleService-Info.plist */; };
 		6596F7E02410684700609C94 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6596F7DF2410684700609C94 /* HomePageViewController.swift */; };
 		65997FC924071E640001DC13 /* IntradayPricePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65997FC824071E640001DC13 /* IntradayPricePoint.swift */; };
@@ -43,6 +46,9 @@
 		657A55EE2406EA7C002D937E /* GraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
 		657A55F22406EBFC002D937E /* EquityInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquityInfoViewController.swift; sourceTree = "<group>"; };
 		6584E537240486E60022AE3D /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		658D70112410B2CD007FAC64 /* LogInOrSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInOrSignUpViewController.swift; sourceTree = "<group>"; };
+		658D70132410B3B6007FAC64 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		658D70152410CAD3007FAC64 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		6596F7DD24105D7500609C94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6596F7DF2410684700609C94 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		65997FC824071E640001DC13 /* IntradayPricePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntradayPricePoint.swift; sourceTree = "<group>"; };
@@ -105,8 +111,18 @@
 			children = (
 				6584E537240486E60022AE3D /* SearchResultTableViewCell.swift */,
 				657A55EC2406E953002D937E /* GraphView.swift */,
+				658D70132410B3B6007FAC64 /* UIButtonExtension.swift */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		658D70102410B2A6007FAC64 /* Auth Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				658D70112410B2CD007FAC64 /* LogInOrSignUpViewController.swift */,
+				658D70152410CAD3007FAC64 /* LogInViewController.swift */,
+			);
+			path = "Auth Controllers";
 			sourceTree = "<group>";
 		};
 		65C8B93523F798E500DEABF5 = {
@@ -185,6 +201,7 @@
 		65C8B9622404733900DEABF5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				658D70102410B2A6007FAC64 /* Auth Controllers */,
 				65C8B95C2404539000DEABF5 /* SearchViewController.swift */,
 				657A55F22406EBFC002D937E /* EquityInfoViewController.swift */,
 				6596F7DF2410684700609C94 /* HomePageViewController.swift */,
@@ -235,7 +252,6 @@
 				65C8B93B23F798E500DEABF5 /* Frameworks */,
 				65C8B93C23F798E500DEABF5 /* Resources */,
 				8637119BE93B65D26820B43C /* [CP] Embed Pods Frameworks */,
-				E861B03130C8A04E143B133B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,23 +356,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LeafPaperTrade/Pods-LeafPaperTrade-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E861B03130C8A04E143B133B /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LeafPaperTrade/Pods-LeafPaperTrade-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LeafPaperTrade/Pods-LeafPaperTrade-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LeafPaperTrade/Pods-LeafPaperTrade-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -365,11 +364,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6584E538240486E60022AE3D /* SearchResultTableViewCell.swift in Sources */,
+				658D70122410B2CD007FAC64 /* LogInOrSignUpViewController.swift in Sources */,
+				658D70162410CAD3007FAC64 /* LogInViewController.swift in Sources */,
 				65C8B961240471D700DEABF5 /* EquityLists.swift in Sources */,
 				657A55ED2406E953002D937E /* GraphView.swift in Sources */,
 				65C8B95D2404539000DEABF5 /* SearchViewController.swift in Sources */,
 				65997FC924071E640001DC13 /* IntradayPricePoint.swift in Sources */,
 				65F94F64240997DB001C3792 /* StringExtension.swift in Sources */,
+				658D70142410B3B6007FAC64 /* UIButtonExtension.swift in Sources */,
 				65C8B9652404735D00DEABF5 /* EquitySearchModelController.swift in Sources */,
 				65C8B96724047A4900DEABF5 /* NetworkError.swift in Sources */,
 				6596F7E02410684700609C94 /* HomePageViewController.swift in Sources */,
