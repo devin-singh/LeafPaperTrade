@@ -7,6 +7,9 @@ target 'LeafPaperTrade' do
   
   pod 'SVProgressHUD'
   pod 'QuickTicker'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'FirebaseUI/Auth'
   
   # Pods for LeafPaperTrade
 

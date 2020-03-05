@@ -22,12 +22,53 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="yzM-bU-4vI" kind="relationship" relationship="viewControllers" id="tCE-wB-Asb"/>
                         <segue destination="b0q-Nf-xCt" kind="relationship" relationship="viewControllers" id="B2Z-1t-RUa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1A-2U-6dY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-984" y="-346"/>
+        </scene>
+        <!--Home Page View Controller-->
+        <scene sceneID="68F-1N-Qab">
+            <objects>
+                <viewController id="yzM-bU-4vI" customClass="HomePageViewController" customModule="LeafPaperTrade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UtD-md-r0U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Positions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBQ-vn-Zta">
+                                <rect key="frame" x="41.5" y="67" width="331" height="80.5"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaX-jJ-Vxp">
+                                <rect key="frame" x="41.5" y="149" width="331" height="45"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CBQ-vn-Zta" firstAttribute="width" secondItem="UtD-md-r0U" secondAttribute="width" multiplier="0.8" id="Lmv-Lc-Zxn"/>
+                            <constraint firstItem="FaX-jJ-Vxp" firstAttribute="height" secondItem="UtD-md-r0U" secondAttribute="height" multiplier="0.05" id="Sbe-R9-fTU"/>
+                            <constraint firstItem="CBQ-vn-Zta" firstAttribute="centerY" secondItem="KTg-j3-Isl" secondAttribute="centerY" multiplier="0.25" id="bTq-Sx-KqV"/>
+                            <constraint firstItem="CBQ-vn-Zta" firstAttribute="height" secondItem="UtD-md-r0U" secondAttribute="height" multiplier="0.09" id="gWb-0X-L6l"/>
+                            <constraint firstItem="FaX-jJ-Vxp" firstAttribute="centerX" secondItem="KTg-j3-Isl" secondAttribute="centerX" id="k25-Ob-Qw0"/>
+                            <constraint firstItem="FaX-jJ-Vxp" firstAttribute="centerY" secondItem="KTg-j3-Isl" secondAttribute="centerY" multiplier="0.4" id="u6X-J7-SWS"/>
+                            <constraint firstItem="CBQ-vn-Zta" firstAttribute="centerX" secondItem="KTg-j3-Isl" secondAttribute="centerX" id="uUp-ws-HCQ"/>
+                            <constraint firstItem="FaX-jJ-Vxp" firstAttribute="width" secondItem="UtD-md-r0U" secondAttribute="width" multiplier="0.8" id="xId-Er-Do8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KTg-j3-Isl"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="house" catalog="system" springLoaded="YES" id="bOg-u3-9rO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rgy-Yx-oXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-59.420289855072468" y="-842.41071428571422"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="dpr-mK-G5v">
@@ -119,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Psq-fz-ghL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850.72463768115949" y="-70.3125"/>
+            <point key="canvasLocation" x="894" y="-70"/>
         </scene>
         <!--Equity Info View Controller-->
         <scene sceneID="8h3-eU-3p9">
@@ -178,11 +219,11 @@
             </objects>
             <point key="canvasLocation" x="1844.9275362318842" y="-60.267857142857139"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="pls-be-z1G">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b0q-Nf-xCt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="EGD-RA-dYP"/>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="EGD-RA-dYP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bx3-Zg-EdK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -199,6 +240,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="plus.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>

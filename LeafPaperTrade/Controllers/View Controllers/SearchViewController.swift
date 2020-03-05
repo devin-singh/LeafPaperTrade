@@ -45,7 +45,6 @@ class SearchViewController: UIViewController {
                         SVProgressHUD.showInfo(withStatus: "No Results Found")
                         SVProgressHUD.dismiss(withDelay: 0.5)
                     }
-                    
                 }
             case .failure(let error):
                 print(error.errorDescription ?? error.localizedDescription)

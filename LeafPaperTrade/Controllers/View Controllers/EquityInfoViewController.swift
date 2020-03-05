@@ -11,7 +11,7 @@ import SVProgressHUD
 import QuickTicker
 
 private extension CGFloat {
-  static let graphHeightMultiplier: CGFloat = 0.6
+    static let graphHeightMultiplier: CGFloat = 0.6
 }
 
 class EquityInfoViewController: UIViewController {
@@ -29,7 +29,7 @@ class EquityInfoViewController: UIViewController {
             updateGraphViewData()
         }
     }
-
+    
     // MARK: - Outlets
     
     @IBOutlet weak var TopGraphView: GraphView!
@@ -39,12 +39,15 @@ class EquityInfoViewController: UIViewController {
     @IBOutlet weak var stockSymbolLabel: UILabel!
     
     // MARK: - Lifecycle Functions
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SVProgressHUD.setContainerView(self.view)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     // MARK: - Private Functions
     
     private func updatePricePoints() {
@@ -109,9 +112,9 @@ class EquityInfoViewController: UIViewController {
         
         self.view.addConstraints([
             NSLayoutConstraint(item: newGraphView, attribute: .bottom, relatedBy: .equal, toItem: TopGraphView, attribute: .bottom, multiplier: 0.9, constant: 0.0),
-        NSLayoutConstraint(item: newGraphView, attribute: .leading, relatedBy: .equal, toItem: TopGraphView, attribute: .leading, multiplier: 1.0, constant: 0.0),
-        NSLayoutConstraint(item: newGraphView, attribute: .trailing, relatedBy: .equal, toItem: TopGraphView, attribute: .trailing, multiplier: 1.0, constant: 0.0),
-        NSLayoutConstraint(item: newGraphView, attribute: .height, relatedBy: .equal, toItem: TopGraphView, attribute: .height, multiplier: .graphHeightMultiplier, constant: 0.0)
+            NSLayoutConstraint(item: newGraphView, attribute: .leading, relatedBy: .equal, toItem: TopGraphView, attribute: .leading, multiplier: 1.0, constant: 0.0),
+            NSLayoutConstraint(item: newGraphView, attribute: .trailing, relatedBy: .equal, toItem: TopGraphView, attribute: .trailing, multiplier: 1.0, constant: 0.0),
+            NSLayoutConstraint(item: newGraphView, attribute: .height, relatedBy: .equal, toItem: TopGraphView, attribute: .height, multiplier: .graphHeightMultiplier, constant: 0.0)
         ])
         
         tickerLabel.text = "\(dataPoints.openingPrice)"
@@ -121,7 +124,12 @@ class EquityInfoViewController: UIViewController {
 }
 
 extension EquityInfoViewController: GraphViewDelegate {
-  func didMoveToPrice(_ graphView: GraphView, price: Double) {
-    QuickTicker.animate(label: tickerLabel, toEndValue: price, duration: 0.3, options: [.easeOut])
-  }
+    func didMoveToPrice(_ graphView: GraphView, price: Double) {
+        QuickTicker.animate(label: tickerLabel, toEndValue: formatPrice(price: price), duration: 0.3, options: [.easeOut])
+    }
+    
+    private func formatPrice(price: Double) -> Double {
+        Double(round(100*price)/100)
+    }
+    
 }

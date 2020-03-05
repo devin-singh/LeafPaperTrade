@@ -57,7 +57,7 @@ class EquityPriceController {
                 guard let secondLevel = topLevel["Time Series (1min)"] as? [String: [String: String]] else { return }
                 
                 var intraDayPricePoints: [PricePoint] = []
-            
+                
                 for (k, v) in secondLevel {
                     
                     let dateFormatter = DateFormatter()
@@ -79,5 +79,12 @@ class EquityPriceController {
                 completion(.failure(.thrownError(error)))
             }
         }.resume()
+    }
+    
+    static func getCurrentWeekPricing(forEquity equity: Equity, completion: @escaping (Result<[PricePoint], NetworkError>) -> Void) {
+        
+        guard let baseURL = baseURL else { return }
+        
+        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
     }
 }

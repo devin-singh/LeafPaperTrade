@@ -43,6 +43,7 @@ class GraphView: UIView {
     private var height: CGFloat = 0
     private var width: CGFloat = 0
     private var step: CGFloat = 1
+    private var once: Bool = false
     
     private var xCoordinates: [CGFloat] = []
     
@@ -72,6 +73,13 @@ class GraphView: UIView {
         
         drawGraph(rect: rect)
         
+        if once { return }
+        once = true
+        
+        
+        
+        
+        
         configureLineIndicatorView()
         configureTimeStampLabel()
         
@@ -90,7 +98,7 @@ class GraphView: UIView {
         guard let dataPoints = dataPoints else { return }
         
         xCoordinates.append(0)
-
+        
         var currentX: CGFloat = 0.0
         for _ in dataPoints.data {
             // Added one for the opening price
@@ -117,9 +125,8 @@ class GraphView: UIView {
             } else {
                 graphPath.addLine(to: newPoint)
             }
-            print(graphPath.currentPoint)
+            
         }
-        
         UIColor.upAccentColor.setFill()
         UIColor.upAccentColor.setStroke()
         graphPath.lineWidth = .graphLineWidth
@@ -191,7 +198,7 @@ class GraphView: UIView {
         let dateString = dateFormatter.string(from: date)
         
         let seperatedDate = dateString.split(separator: " ").map { String($0) }
-
+        
         timeStampLabel.text = seperatedDate[1] + " ET"
         
         if offset != lineViewLeading.constant {

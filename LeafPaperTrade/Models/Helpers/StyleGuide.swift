@@ -69,7 +69,7 @@ extension CGFloat {
 }
 
 extension UILabel {
-  
+    
   func configureTitleLabel(withText text: String) {
     configure(withText: text.uppercased(), size: .titleTextSize, alignment: .left, lines: 0, robotoWeight: .medium)
   }

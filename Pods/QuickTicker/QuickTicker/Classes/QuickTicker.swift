@@ -190,7 +190,7 @@ extension QTObject {
     fileprivate func getDecimalCount(input: Double) -> Int {
         if digitIsInt(input) { return 0 }
         let str = String(input)
-        if let dot = str.index(of: ".") {
+        if let dot = str.firstIndex(of: ".") {
             let firstPart = str[str.startIndex...dot]
             var decimals = str
             decimals.removeFirst(firstPart.count)
