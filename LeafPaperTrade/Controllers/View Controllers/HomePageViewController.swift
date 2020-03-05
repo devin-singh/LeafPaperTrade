@@ -23,7 +23,17 @@ class HomePageViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
+        let ref = Database.database().reference()
         
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        ref.child("Users/\(uid)/Portfolio Value").observe(.value, with: { (snapshot) in
+            guard let portfolioValue = snapshot.value as? String else { return }
+            
+            DispatchQueue.main.async {
+                self.portfolioValueLabel.text = portfolioValue
+            }
+        })
     }
     
     // MARK: - Private Functions

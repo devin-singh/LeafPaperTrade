@@ -48,13 +48,18 @@ class SignUpViewController: UIViewController {
             Auth.auth().createUser(withEmail: emailText, password: passwordText) { (result, error) in
             guard let user = result?.user, error == nil else {
                 SVProgressHUD.showInfo(withStatus: error!.localizedDescription)
-                return
-                    
+                return }
                     DispatchQueue.main.async {
                         SVProgressHUD.dismiss()
                         self.performSegue(withIdentifier: "toTabBarFromSignUp", sender: sender)
                 }
-            }
+                
+                // Add user uid to database
+                
+                let ref = Database.database().reference()
+                
+                ref.child("Users/\(user.uid)/Portfolio Value").setValue("100,000")
+                ref.child("Users/\(user.uid)/Email").setValue("\(user.email!)")
         }
     }
 }

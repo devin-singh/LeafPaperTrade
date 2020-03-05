@@ -213,20 +213,38 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaX-jJ-Vxp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaX-jJ-Vxp">
                                 <rect key="frame" x="41.5" y="158" width="331" height="44.5"/>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="30"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="55"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boz-Vz-Jkq">
+                                <rect key="frame" x="0.0" y="335.5" width="414" height="478"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="67" id="gbt-U2-c44">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gbt-U2-c44" id="KaH-Vv-pGp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="boz-Vz-Jkq" firstAttribute="height" secondItem="UtD-md-r0U" secondAttribute="height" multiplier="0.533482" id="1c9-8D-Eth"/>
+                            <constraint firstItem="boz-Vz-Jkq" firstAttribute="width" secondItem="UtD-md-r0U" secondAttribute="width" id="1vp-IQ-Zvn"/>
                             <constraint firstItem="CBQ-vn-Zta" firstAttribute="width" secondItem="UtD-md-r0U" secondAttribute="width" multiplier="0.8" id="Lmv-Lc-Zxn"/>
                             <constraint firstItem="FaX-jJ-Vxp" firstAttribute="height" secondItem="UtD-md-r0U" secondAttribute="height" multiplier="0.05" id="Sbe-R9-fTU"/>
                             <constraint firstItem="CBQ-vn-Zta" firstAttribute="centerY" secondItem="KTg-j3-Isl" secondAttribute="centerY" multiplier="0.25" id="bTq-Sx-KqV"/>
                             <constraint firstItem="CBQ-vn-Zta" firstAttribute="height" secondItem="UtD-md-r0U" secondAttribute="height" multiplier="0.09" id="gWb-0X-L6l"/>
+                            <constraint firstItem="boz-Vz-Jkq" firstAttribute="centerY" secondItem="KTg-j3-Isl" secondAttribute="centerY" multiplier="1.275" id="i5M-05-wqq"/>
                             <constraint firstItem="FaX-jJ-Vxp" firstAttribute="centerX" secondItem="KTg-j3-Isl" secondAttribute="centerX" id="k25-Ob-Qw0"/>
+                            <constraint firstItem="boz-Vz-Jkq" firstAttribute="centerX" secondItem="KTg-j3-Isl" secondAttribute="centerX" id="leJ-sW-Z21"/>
                             <constraint firstItem="FaX-jJ-Vxp" firstAttribute="centerY" secondItem="KTg-j3-Isl" secondAttribute="centerY" multiplier="0.4" id="u6X-J7-SWS"/>
                             <constraint firstItem="CBQ-vn-Zta" firstAttribute="centerX" secondItem="KTg-j3-Isl" secondAttribute="centerX" id="uUp-ws-HCQ"/>
                             <constraint firstItem="FaX-jJ-Vxp" firstAttribute="width" secondItem="UtD-md-r0U" secondAttribute="width" multiplier="0.8" id="xId-Er-Do8"/>
@@ -358,7 +376,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="AqE-mG-eld" firstAttribute="centerY" secondItem="g2C-Ae-TqC" secondAttribute="centerY" multiplier="0.3" id="Hwe-Hd-dhG"/>
                                     <constraint firstItem="RQT-V8-xU3" firstAttribute="centerX" secondItem="g2C-Ae-TqC" secondAttribute="centerX" id="OAP-CN-Z38"/>
@@ -371,7 +389,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="g2C-Ae-TqC" firstAttribute="width" secondItem="7PP-jM-Ija" secondAttribute="width" id="PI8-TM-yMj"/>
                             <constraint firstItem="g2C-Ae-TqC" firstAttribute="centerY" secondItem="h8w-Wz-4em" secondAttribute="centerY" multiplier="0.8" id="Qad-RM-vt7"/>
