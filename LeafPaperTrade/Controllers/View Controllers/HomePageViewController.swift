@@ -19,7 +19,6 @@ class HomePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updatePortfolioLabel()
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
@@ -29,16 +28,16 @@ class HomePageViewController: UIViewController {
         
         ref.child("Users/\(uid)/Portfolio Value").observe(.value, with: { (snapshot) in
             guard let portfolioValue = snapshot.value as? String else { return }
+            let numberFormatter = NumberFormatter()
+            
+            numberFormatter.numberStyle = .decimal
+            guard let portfolioValueDouble = Double(portfolioValue) else { return }
+            
+            guard let formattedPortfolioValue = numberFormatter.string(from: NSNumber(value: portfolioValueDouble)) else { return }
             
             DispatchQueue.main.async {
-                self.portfolioValueLabel.text = portfolioValue
+                self.portfolioValueLabel.text = "$\(formattedPortfolioValue)"
             }
         })
-    }
-    
-    // MARK: - Private Functions
-    
-    private func updatePortfolioLabel() {
-        
     }
 }

@@ -67,7 +67,6 @@ class EquityInfoViewController: UIViewController {
     
     @IBAction func tradeButtonPressed(_ sender: Any) {
         
-        
         if tradeButton.titleLabel?.text != "Sell" {
             UIView.animate(withDuration: 2) {
                 self.tradeButtonY.setMultiplier(multiplier: 1.6)
@@ -77,13 +76,33 @@ class EquityInfoViewController: UIViewController {
             }
         } else {
             tradeButton.pulsate()
-            performSegue(withIdentifier: "toTransactVC", sender: sender)
+            performSegue(withIdentifier: "toSellVC", sender: sender)
         }
+    }
+    
+    @IBAction func buyButtonPressed(_ sender: Any) {
+        
+        self.buyButton.pulsate()
+        performSegue(withIdentifier: "toBuyVC", sender: sender)
     }
     
     // MARK: - Prepare For Segue
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toBuyVC" {
+            guard let destinationVC = segue.destination as? TransactViewController else { return }
+            
+            destinationVC.equity = self.equity
+            destinationVC.transactionType = .buy
+            
+        } else if segue.identifier == "toSellVC" {
+            guard let destintionVC = segue.destination as? TransactViewController else { return }
+            
+            destintionVC.equity = self.equity
+            destintionVC.transactionType = .sell
+        }
+        
+    }
     
     // MARK: - Private Functions
     

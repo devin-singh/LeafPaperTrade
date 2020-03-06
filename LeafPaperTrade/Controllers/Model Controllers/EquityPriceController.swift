@@ -13,7 +13,8 @@ class EquityPriceController {
     static let baseURL = URL(string: "https://www.alphavantage.co/query")
     // Function Query
     static private let functionKey = "function"
-    static private let functionValue = "TIME_SERIES_INTRADAY"
+    static private let intradayFunctionValue = "TIME_SERIES_INTRADAY"
+    static private let currentQuoteFunctionValue = "GLOBAL_QUOTE"
     // Symbol Query
     static private let symbolKey = "symbol"
     // Interval Query
@@ -32,7 +33,7 @@ class EquityPriceController {
         
         var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
-        let functionQuery = URLQueryItem(name: functionKey, value: functionValue)
+        let functionQuery = URLQueryItem(name: functionKey, value: intradayFunctionValue)
         let symbolQuery = URLQueryItem(name: symbolKey, value: equity.symbol)
         let intervalQuery = URLQueryItem(name: intervalKey, value: intervalValue)
         let outputSizeQuery = URLQueryItem(name: outputSizeKey, value: outputSizeVal)
@@ -47,6 +48,7 @@ class EquityPriceController {
         URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
             if let error = error {
                 print(error)
+                return completion(.failure(.thrownError(error)))
             }
             
             guard let data = data else { return }
@@ -88,12 +90,37 @@ class EquityPriceController {
         //var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
     }
     
-    static func getQuote(forEquity equity: Equity, completion: @escaping (Result<[PricePoint], NetworkError>) -> Void) {
+    static func getQuote(forEquity equity: Equity, completion: @escaping (Result<GlobalQuote, NetworkError>) -> Void) {
         
-        //guard let baseURL = baseURL else { return }
+        guard let baseURL = baseURL else { return }
         
-        //var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         
+        let functionQuery = URLQueryItem(name: functionKey, value: currentQuoteFunctionValue)
         
+        let symbolQuery = URLQueryItem(name: symbolKey, value: equity.symbol)
+        
+        let apiQuery = URLQueryItem(name: apiKey, value: apiValue)
+        
+        components?.queryItems = [functionQuery, symbolQuery, apiQuery]
+        
+        guard let finalURL = components?.url else { return }
+        print(finalURL)
+        URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
+            if let error = error {
+                print(error)
+                return completion(.failure(.thrownError(error)))
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let topLevelObj = try JSONDecoder().decode(QuoteTopLevel.self, from: data)
+                completion(.success(topLevelObj.globalQuote)) 
+            } catch {
+                print(error)
+                completion(.failure(.thrownError(error)))
+            }
+        }.resume()
     }
 }

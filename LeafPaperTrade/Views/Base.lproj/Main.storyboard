@@ -213,7 +213,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaX-jJ-Vxp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaX-jJ-Vxp">
                                 <rect key="frame" x="41.5" y="158" width="331" height="44.5"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="55"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -377,6 +377,9 @@
                                 <state key="normal" title="Buy">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buyButtonPressed:" destination="59G-5D-e6M" eventType="touchUpInside" id="bUI-Q5-ej8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ntk-ua-5Zj">
                                 <rect key="frame" x="228" y="748.5" width="165" height="35"/>
@@ -415,17 +418,18 @@
                         <outlet property="tickerLabel" destination="RQT-V8-xU3" id="pD3-r0-8Rt"/>
                         <outlet property="tradeButton" destination="Ntk-ua-5Zj" id="B2r-zK-vrR"/>
                         <outlet property="tradeButtonY" destination="FPJ-El-JAx" id="dOC-LN-Vhn"/>
-                        <segue destination="wIn-N6-ci9" kind="presentation" identifier="toTransactVC" modalPresentationStyle="fullScreen" id="5nd-yq-e6o"/>
+                        <segue destination="wIn-N6-ci9" kind="presentation" identifier="toSellVC" modalPresentationStyle="fullScreen" id="5nd-yq-e6o"/>
+                        <segue destination="wIn-N6-ci9" kind="presentation" identifier="toBuyVC" modalPresentationStyle="fullScreen" id="dJd-5C-8mt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdH-3E-C9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2835" y="-70"/>
         </scene>
-        <!--View Controller-->
+        <!--Transact View Controller-->
         <scene sceneID="JyP-0C-Wgn">
             <objects>
-                <viewController id="wIn-N6-ci9" sceneMemberID="viewController">
+                <viewController id="wIn-N6-ci9" customClass="TransactViewController" customModule="LeafPaperTrade" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m0i-Qd-KnW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -450,6 +454,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bib-3t-VWk">
                                 <rect key="frame" x="145" y="392.5" width="124" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="transactButtonPressed:" destination="wIn-N6-ci9" eventType="touchUpInside" id="lL5-yD-Rh8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -473,10 +480,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WwL-8I-VKE"/>
                     </view>
+                    <connections>
+                        <outlet property="canBuyLabel" destination="J2G-5z-a0v" id="6bS-pg-eEh"/>
+                        <outlet property="symbolTicker" destination="sfZ-21-ay9" id="pR7-b9-eHI"/>
+                        <outlet property="transactButton" destination="bib-3t-VWk" id="G5c-f1-rlR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DL5-Na-BX0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3829" y="-70"/>
+            <point key="canvasLocation" x="3909" y="154"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pls-be-z1G">
@@ -530,6 +542,7 @@
         <image name="plus.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="dJd-5C-8mt"/>
         <segue reference="wcQ-6H-YTy"/>
     </inferredMetricsTieBreakers>
 </document>
