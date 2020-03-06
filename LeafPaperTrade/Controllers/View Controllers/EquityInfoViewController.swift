@@ -77,10 +77,11 @@ class EquityInfoViewController: UIViewController {
             }
         } else {
             tradeButton.pulsate()
-            
-            // pop sell controller
+            performSegue(withIdentifier: "toTransactVC", sender: sender)
         }
     }
+    
+    // MARK: - Prepare For Segue
     
     
     

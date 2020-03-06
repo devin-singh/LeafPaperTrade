@@ -83,8 +83,17 @@ class EquityPriceController {
     
     static func getCurrentWeekPricing(forEquity equity: Equity, completion: @escaping (Result<[PricePoint], NetworkError>) -> Void) {
         
-        guard let baseURL = baseURL else { return }
+       //guard let baseURL = baseURL else { return }
         
-        var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        //var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+    }
+    
+    static func getQuote(forEquity equity: Equity, completion: @escaping (Result<[PricePoint], NetworkError>) -> Void) {
+        
+        //guard let baseURL = baseURL else { return }
+        
+        //var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        
+        
     }
 }

@@ -18,7 +18,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
     // MARK: - Lifecycle Functions
     
     override func viewDidLoad() {
@@ -45,21 +44,23 @@ class SignUpViewController: UIViewController {
             SVProgressHUD.showInfo(withStatus: "Please enter a password")
             return
         }
-            Auth.auth().createUser(withEmail: emailText, password: passwordText) { (result, error) in
-            guard let user = result?.user, error == nil else {
-                SVProgressHUD.showInfo(withStatus: error!.localizedDescription)
-                return }
-                    DispatchQueue.main.async {
-                        SVProgressHUD.dismiss()
-                        self.performSegue(withIdentifier: "toTabBarFromSignUp", sender: sender)
-                }
-                
-                // Add user uid to database
-                
-                let ref = Database.database().reference()
-                
-                ref.child("Users/\(user.uid)/Portfolio Value").setValue("100,000")
-                ref.child("Users/\(user.uid)/Email").setValue("\(user.email!)")
+        
+        Auth.auth().createUser(withEmail: emailText, password: passwordText) { (result, error) in
+            guard let user = result?.user, error == nil
+                else {
+                    SVProgressHUD.showInfo(withStatus: error!.localizedDescription)
+                    return
+            }
+            
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                self.performSegue(withIdentifier: "toTabBarFromSignUp", sender: sender)
+            }
+            // Add user uid to database
+            let ref = Database.database().reference()
+            
+            ref.child("Users/\(user.uid)/Portfolio Value").setValue("100000")
+            ref.child("Users/\(user.uid)/Email").setValue("\(user.email!)")
         }
     }
 }
