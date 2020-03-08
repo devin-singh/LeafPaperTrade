@@ -23,6 +23,12 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailTextField.layer.cornerRadius = 10
+        
+//        let placeholderColor = UIColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
+        emailTextField.attributedPlaceholder = NSAttributedString(string: " Email Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        
+        
         signUpButton.layer.cornerRadius = 10
         signUpButton.clipsToBounds = true
         SVProgressHUD.setContainerView(self.view)
