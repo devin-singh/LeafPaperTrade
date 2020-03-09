@@ -2,7 +2,6 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Screen Shot 2020-03-07 at 6.15.05 PM.png",
       "scale" : "1x"
     },
     {
@@ -11,6 +10,7 @@
     },
     {
       "idiom" : "universal",
+      "filename" : "Right Detail@3x.png",
       "scale" : "3x"
     }
   ],

@@ -59,6 +59,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Right Detail" translatesAutoresizingMaskIntoConstraints="NO" id="P6T-Uc-Cc5">
+                                <rect key="frame" x="16" y="88" width="28" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -90,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h1c-pN-yxg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2047.826086956522" y="-346.20535714285711"/>
+            <point key="canvasLocation" x="-2048.8000000000002" y="-346.55172413793105"/>
         </scene>
         <!--Log In-->
         <scene sceneID="gYn-St-UpK">
@@ -157,24 +161,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="Jpn-hU-uHJ">
-                                <rect key="frame" x="37.666666666666657" y="120.33333333333331" width="300" height="105.66666666666669"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dog-FU-dPS">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="35.333333333333336"/>
-                                        <color key="backgroundColor" red="0.011764705882352941" green="0.027450980392156862" blue="0.15686274509803921" alpha="0.10969606164383562" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hQQ-ig-gNi">
-                                        <rect key="frame" x="0.0" y="70.333333333333329" width="300" height="35.333333333333329"/>
-                                        <color key="backgroundColor" red="0.011764705882352941" green="0.027450980392156862" blue="0.15686274509803921" alpha="0.10215111301369863" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ7-Sg-snN">
                                 <rect key="frame" x="37.666666666666657" y="369.33333333333331" width="300" height="40.666666666666686"/>
                                 <color key="backgroundColor" red="0.61568627450000002" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -184,17 +170,31 @@
                                     <action selector="signUpButtonPressed:" destination="svT-Wv-SQd" eventType="touchUpInside" id="m0y-5s-AxQ"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hQQ-ig-gNi">
+                                <rect key="frame" x="37" y="311" width="300" height="35.333333333333329"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.011764705882352941" green="0.027450980392156862" blue="0.15686274509803921" alpha="0.10215111301369863" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Email Address" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Dog-FU-dPS">
+                                <rect key="frame" x="20" y="236" width="335" height="56"/>
+                                <color key="backgroundColor" red="0.011764705882352941" green="0.027450980392156862" blue="0.15686274509803921" alpha="0.10969606164383562" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Jpn-hU-uHJ" firstAttribute="width" secondItem="s3n-DM-eg1" secondAttribute="width" multiplier="0.8" id="HZV-hl-KE9"/>
+                            <constraint firstItem="Dog-FU-dPS" firstAttribute="width" secondItem="s3n-DM-eg1" secondAttribute="width" multiplier="0.894" id="1BH-tg-Hyb"/>
+                            <constraint firstItem="Dog-FU-dPS" firstAttribute="centerX" secondItem="axe-31-Bl7" secondAttribute="centerX" id="CTE-zf-ap1"/>
                             <constraint firstItem="cZ7-Sg-snN" firstAttribute="height" secondItem="s3n-DM-eg1" secondAttribute="height" multiplier="0.0502232" id="KyQ-UQ-oEV"/>
-                            <constraint firstItem="Jpn-hU-uHJ" firstAttribute="height" secondItem="s3n-DM-eg1" secondAttribute="height" multiplier="0.13" id="bLC-k5-skO"/>
+                            <constraint firstItem="Dog-FU-dPS" firstAttribute="height" secondItem="s3n-DM-eg1" secondAttribute="height" multiplier="0.069" id="bf7-Rg-Hr0"/>
+                            <constraint firstItem="Dog-FU-dPS" firstAttribute="centerY" secondItem="axe-31-Bl7" secondAttribute="centerY" multiplier="0.61" id="bme-di-ZMp"/>
                             <constraint firstItem="cZ7-Sg-snN" firstAttribute="width" secondItem="s3n-DM-eg1" secondAttribute="width" multiplier="0.8" id="fAY-Pc-fDr"/>
                             <constraint firstItem="cZ7-Sg-snN" firstAttribute="centerX" secondItem="axe-31-Bl7" secondAttribute="centerX" id="hFe-i3-vwC"/>
                             <constraint firstItem="cZ7-Sg-snN" firstAttribute="centerY" secondItem="axe-31-Bl7" secondAttribute="centerY" multiplier="0.9" id="iTk-oR-ptf"/>
-                            <constraint firstItem="Jpn-hU-uHJ" firstAttribute="centerX" secondItem="axe-31-Bl7" secondAttribute="centerX" id="mnK-B2-naz"/>
-                            <constraint firstItem="Jpn-hU-uHJ" firstAttribute="centerY" secondItem="axe-31-Bl7" secondAttribute="centerY" multiplier="0.4" id="oev-6f-h01"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="axe-31-Bl7"/>
                     </view>
@@ -567,12 +567,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Right Detail" width="3300" height="3300"/>
         <image name="house" catalog="system" width="64" height="54"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="plus.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dJd-5C-8mt"/>
-        <segue reference="wcQ-6H-YTy"/>
+        <segue reference="Zrq-Vb-MEb"/>
     </inferredMetricsTieBreakers>
 </document>
