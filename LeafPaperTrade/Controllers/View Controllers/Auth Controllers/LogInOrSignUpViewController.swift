@@ -18,6 +18,7 @@ class LogInOrSignUpViewController: UIViewController {
     @IBOutlet weak var LogInButton: UIButton!
     @IBOutlet weak var SignUpButton: UIButton!
     
+    
     // MARK: - Lifecycle Functions
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
@@ -26,11 +27,13 @@ class LogInOrSignUpViewController: UIViewController {
            let newHeight = image.size.height * scale
            UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
            image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-
+           
            let newImage = UIGraphicsGetImageFromCurrentImageContext()
-           UIGraphicsEndImageContext()
 
-           return newImage
+           UIGraphicsEndImageContext()
+           
+        return newImage?.withTintColor(.mapleBlueColor, renderingMode: .alwaysOriginal)
+           
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +43,8 @@ class LogInOrSignUpViewController: UIViewController {
         
         navigationController?.navigationBar.backIndicatorImage = img
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = img
-        navigationController?.navigationBar.backIndicatorImage?.withRenderingMode(.alwaysOriginal)
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage?.withRenderingMode(.alwaysOriginal)
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     
         
         LogInButton.layer.cornerRadius = 10
