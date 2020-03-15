@@ -20,8 +20,30 @@ class LogInOrSignUpViewController: UIViewController {
     
     // MARK: - Lifecycle Functions
     
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+
+           let scale = newWidth / image.size.width
+           let newHeight = image.size.height * scale
+           UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+           image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+
+           let newImage = UIGraphicsGetImageFromCurrentImageContext()
+           UIGraphicsEndImageContext()
+
+           return newImage
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var img = UIImage(named: "Right Detail")
+        img = resizeImage(image: img!, newWidth: 40)
+        
+        navigationController?.navigationBar.backIndicatorImage = img
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = img
+        navigationController?.navigationBar.backIndicatorImage?.withRenderingMode(.alwaysOriginal)
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage?.withRenderingMode(.alwaysOriginal)
+    
+        
         LogInButton.layer.cornerRadius = 10
         LogInButton.clipsToBounds = true
         

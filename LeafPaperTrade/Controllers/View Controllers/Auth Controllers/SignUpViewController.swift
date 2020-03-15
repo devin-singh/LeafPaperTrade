@@ -19,16 +19,34 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     // MARK: - Lifecycle Functions
+    @objc func back(sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated:true)
+    }
+    
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //navigationItem.hidesBackButton = true
+       
+        
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: img, style: .plain, target: self, action: #selector(back(sender:)))
+        
+        let color = UIColor(red: 103.0, green: 209.0, blue: 224.0, alpha: 1.0)
+        
+        
+        
+        
+
         emailTextField.layer.cornerRadius = 10
-        emailTextField.attributedPlaceholder = NSAttributedString(string: " Email Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        emailTextField.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 30)
+        
         
         passwordTextField.layer.cornerRadius = 10
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: " Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
-        
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        passwordTextField.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 30)
         
         signUpButton.layer.cornerRadius = 10
         signUpButton.clipsToBounds = true
