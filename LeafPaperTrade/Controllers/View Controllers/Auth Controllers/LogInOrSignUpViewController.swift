@@ -18,7 +18,6 @@ class LogInOrSignUpViewController: UIViewController {
     @IBOutlet weak var LogInButton: UIButton!
     @IBOutlet weak var SignUpButton: UIButton!
     
-    
     // MARK: - Lifecycle Functions
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
@@ -56,9 +55,7 @@ class LogInOrSignUpViewController: UIViewController {
         if Auth.auth().currentUser != nil {
             handleFaceId()
             SVProgressHUD.setContainerView(self.view)
-            
         }
-        
         // Do any additional setup after loading the view.
     }
     
@@ -101,6 +98,4 @@ class LogInOrSignUpViewController: UIViewController {
     @IBAction func signUpButtonPressed(_ sender: Any) {
         SignUpButton.pulsate()
     }
-    
-    
 }

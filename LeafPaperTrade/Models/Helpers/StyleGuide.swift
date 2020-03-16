@@ -55,7 +55,7 @@ extension UIColor {
     static let upAccentColor: UIColor = UIColor(red: 157/255, green: 0/255, blue: 255/255, alpha: 1.0)
     static let downAccentColor: UIColor = UIColor(red: 157/255, green: 0/255, blue: 0/255, alpha: 1.0)
     
-    static let mapleBlueColor: UIColor = UIColor(red: 104/255, green: 209/255, blue: 224/255, alpha: 1)
+    static let mapleBlueColor: UIColor = UIColor(red: 104/255, green: 209/255, blue: 224/255, alpha: 1.0)
     
     static let lightTextTextColor: UIColor = .white
     static let darkTextTextColor: UIColor = .black
