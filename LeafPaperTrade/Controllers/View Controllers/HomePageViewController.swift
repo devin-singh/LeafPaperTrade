@@ -14,11 +14,14 @@ class HomePageViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var portfolioValueLabel: UILabel!
+    @IBOutlet weak var positionsTableViewController: UITableView!
+    
     
     // MARK: - Lifecycle Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        positionsTableViewController.separatorColor = UIColor.mapleBlueColor
         self.navigationController?.navigationBar.isHidden = true
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         

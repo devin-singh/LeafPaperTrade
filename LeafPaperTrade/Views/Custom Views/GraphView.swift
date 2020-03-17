@@ -15,7 +15,7 @@ protocol GraphViewDelegate: class {
 // Layout constants
 private extension CGFloat {
     static let graphLineWidth: CGFloat = 1.5
-    static let scale: CGFloat = 0.01
+    static var scale: CGFloat = 100
     static let lineViewHeightMultiplier: CGFloat = 0.7
     static let baseLineWidth: CGFloat = 1.0
     static let timeStampPadding: CGFloat = 10.0
@@ -76,10 +76,6 @@ class GraphView: UIView {
         if once { return }
         once = true
         
-        
-        
-        
-        
         configureLineIndicatorView()
         configureTimeStampLabel()
         
@@ -116,15 +112,24 @@ class GraphView: UIView {
             let midPoint = dataPoints.openingPrice
             let graphMiddle = height/2
             
-            let y: CGFloat = graphMiddle + CGFloat(midPoint - dataPoint.price) * CGFloat(1000 / dataPoints.openingPrice)
+            let y: CGFloat = graphMiddle + CGFloat(midPoint - dataPoint.price) * CGFloat.scale
             
-            let newPoint = CGPoint(x: xCoordinates[index], y: y)
             
-            if index == 0 {
-                graphPath.move(to: CGPoint(x: 0, y: y))
+            if y < self.coordinateSpace.bounds.origin.y {
+                CGFloat.scale -= 1
+                drawGraph(rect: rect)
             } else {
-                graphPath.addLine(to: newPoint)
+                let newPoint = CGPoint(x: xCoordinates[index], y: y)
+                
+                if index == 0 {
+                    graphPath.move(to: CGPoint(x: 0, y: y))
+                } else {
+                    graphPath.addLine(to: newPoint)
+                }
             }
+            
+            
+            
             
         }
         UIColor.upAccentColor.setFill()

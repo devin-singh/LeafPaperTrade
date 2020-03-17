@@ -24,6 +24,8 @@ class LogInViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        LogInButton.layer.borderWidth = 1
+        LogInButton.layer.borderColor = UIColor.mapleBlueColor.cgColor
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             
         }
@@ -33,6 +35,17 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         LogInButton.layer.cornerRadius = 10
         LogInButton.clipsToBounds = true
+        LogInButton.clipsToBounds = true
+        
+        emailTextField.layer.cornerRadius = 10
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Email Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        emailTextField.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 30)
+        
+        
+        passwordTextField.layer.cornerRadius = 10
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        passwordTextField.layer.sublayerTransform = CATransform3DMakeTranslation(20, 0, 30)
+        
         SVProgressHUD.setContainerView(self.view)
     }
     

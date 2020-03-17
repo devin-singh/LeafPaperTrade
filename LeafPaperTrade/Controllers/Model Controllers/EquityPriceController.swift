@@ -56,7 +56,11 @@ class EquityPriceController {
             do {
                 guard let topLevel = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else { return }
                 
-                guard let secondLevel = topLevel["Time Series (1min)"] as? [String: [String: String]] else { return }
+                guard let secondLevel = topLevel["Time Series (1min)"] as? [String: [String: String]] else {
+                    
+                    // pop advertisement to show API call limit hit.
+                    return
+                }
                 
                 var intraDayPricePoints: [PricePoint] = []
                 

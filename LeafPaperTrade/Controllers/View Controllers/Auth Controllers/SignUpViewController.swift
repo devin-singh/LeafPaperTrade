@@ -28,16 +28,8 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //navigationItem.hidesBackButton = true
-       
-        
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(image: img, style: .plain, target: self, action: #selector(back(sender:)))
-        
-        let color = UIColor(red: 103.0, green: 209.0, blue: 224.0, alpha: 1.0)
-        
-        
-        
-        
+        signUpButton.layer.borderWidth = 1
+        signUpButton.layer.borderColor = UIColor.mapleBlueColor.cgColor
 
         emailTextField.layer.cornerRadius = 10
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Email Address", attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])

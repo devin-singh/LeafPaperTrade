@@ -38,25 +38,25 @@ class EquityInfoViewController: UIViewController {
     
     @IBOutlet weak var stockSymbolLabel: UILabel!
     
-    @IBOutlet weak var tradeButton: UIButton!
+    @IBOutlet weak var sellButton: UIButton!
     
     @IBOutlet weak var buyButton: UIButton!
-    
-    @IBOutlet weak var tradeButtonY: NSLayoutConstraint!
     
     // MARK: - Lifecycle Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         SVProgressHUD.setContainerView(self.view)
-        tradeButton.layer.cornerRadius = 10
-        tradeButton.clipsToBounds = true
+        
+        sellButton.layer.cornerRadius = 10
+        sellButton.clipsToBounds = true
         
         buyButton.layer.cornerRadius = 10
         buyButton.clipsToBounds = true
         
         buyButton.isHidden = true
-        tradeButton.isHidden = true
+        sellButton.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,19 +65,10 @@ class EquityInfoViewController: UIViewController {
     
     //  MARK: - Actions
     
-    @IBAction func tradeButtonPressed(_ sender: Any) {
-        
-        if tradeButton.titleLabel?.text != "Sell" {
-            UIView.animate(withDuration: 2) {
-                self.tradeButtonY.setMultiplier(multiplier: 1.6)
-                self.tradeButton.setTitle("Sell", for: .normal)
-                self.tradeButton.pulsate()
-                self.buyButton.pulsate()
-            }
-        } else {
-            tradeButton.pulsate()
-            performSegue(withIdentifier: "toSellVC", sender: sender)
-        }
+    @IBAction func sellButtonPressed(_ sender: Any) {
+        self.sellButton.pulsate()
+        performSegue(withIdentifier: "toSellVC", sender: sender)
+    
     }
     
     @IBAction func buyButtonPressed(_ sender: Any) {
@@ -163,7 +154,7 @@ class EquityInfoViewController: UIViewController {
         newGraphView.delegate = self
         TopGraphView.addSubview(newGraphView)
         
-        newGraphView.backgroundColor = .black
+        newGraphView.backgroundColor = .white
         newGraphView.translatesAutoresizingMaskIntoConstraints = false
         
         self.view.addConstraints([
@@ -176,7 +167,7 @@ class EquityInfoViewController: UIViewController {
         tickerLabel.text = "\(dataPoints.openingPrice)"
         stockSymbolLabel.text = equity?.symbol
         SVProgressHUD.dismiss()
-        tradeButton.isHidden = false
+        sellButton.isHidden = false
         buyButton.isHidden = false
     }
 }
