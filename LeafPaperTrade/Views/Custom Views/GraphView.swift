@@ -118,6 +118,7 @@ class GraphView: UIView {
             if y < self.coordinateSpace.bounds.origin.y {
                 CGFloat.scale -= 1
                 drawGraph(rect: rect)
+                return
             } else {
                 let newPoint = CGPoint(x: xCoordinates[index], y: y)
                 
